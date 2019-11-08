@@ -10,17 +10,19 @@ public class Product {
     private String name;
     private String vendor;
     private String category;
-    private Integer quantityOrdered;
+    private Integer quantityAvailable;
+    private Integer unitCost;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String vendor, String category, Integer quantityAvailable) {
+    public Product(Long id, String name, String vendor, String category, Integer quantityAvailable, Integer unitCost) {
         this.id = id;
         this.name = name;
         this.vendor = vendor;
         this.category = category;
-        this.quantityOrdered = quantityAvailable;
+        this.quantityAvailable = quantityAvailable;
+        this.unitCost = unitCost;
     }
 
     public Long getId() {
@@ -55,12 +57,20 @@ public class Product {
         this.category = category;
     }
 
-    public Integer getQuantityOrdered() {
-        return quantityOrdered;
+    public Integer getQuantityAvailable() {
+        return quantityAvailable;
     }
 
-    public void setQuantityOrdered(Integer quantityOrdered) {
-        this.quantityOrdered = quantityOrdered;
+    public void setQuantityAvailable(Integer quantityAvailable) {
+        this.quantityAvailable = quantityAvailable;
+    }
+
+    public Integer getUnitCost() {
+        return unitCost;
+    }
+
+    public void setUnitCost(Integer unitCost) {
+        this.unitCost = unitCost;
     }
 
     @Override
@@ -70,7 +80,8 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", vendor='" + vendor + '\'' +
                 ", category='" + category + '\'' +
-                ", quantityAvailable=" + quantityOrdered +
+                ", quantityAvailable=" + quantityAvailable +
+                ", unitCost=" + unitCost +
                 '}';
     }
 }

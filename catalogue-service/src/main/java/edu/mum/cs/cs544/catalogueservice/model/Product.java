@@ -1,11 +1,8 @@
 package edu.mum.cs.cs544.catalogueservice.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@JsonIgnoreProperties
 @Entity
 public class Product {
     @Id
@@ -14,16 +11,18 @@ public class Product {
     private String vendor;
     private String category;
     private Integer quantityAvailable;
+    private Integer unitCost;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String vendor, String category, Integer quantityAvailable) {
+    public Product(Long id, String name, String vendor, String category, Integer quantityAvailable, Integer unitCost) {
         this.id = id;
         this.name = name;
         this.vendor = vendor;
         this.category = category;
         this.quantityAvailable = quantityAvailable;
+        this.unitCost = unitCost;
     }
 
     public Long getId() {
@@ -66,6 +65,14 @@ public class Product {
         this.quantityAvailable = quantityAvailable;
     }
 
+    public Integer getUnitCost() {
+        return unitCost;
+    }
+
+    public void setUnitCost(Integer unitCost) {
+        this.unitCost = unitCost;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -74,6 +81,7 @@ public class Product {
                 ", vendor='" + vendor + '\'' +
                 ", category='" + category + '\'' +
                 ", quantityAvailable=" + quantityAvailable +
+                ", unitCost=" + unitCost +
                 '}';
     }
 }

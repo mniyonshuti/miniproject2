@@ -13,11 +13,11 @@ public class ProductService implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        productRepository.save(new Product(1L, "IPhone 11", "Apple", "Electronics", 200));
-        productRepository.save(new Product(2L, "Shoes", "Nike", "Clothing", 600));
-        productRepository.save(new Product(3L, "Shirts", "NB", "Clothing", 500));
-        productRepository.save(new Product(4L, "Mac", "Apple", "Electronics", 200));
-        productRepository.save(new Product(5L, "Books", "Niyo", "Stationary", 800));
-        productRepository.save(new Product(6L, "pens", "Niyo", "Stationary", 600));
+        productRepository.save(new Product(1L, "IPhone 11", "Apple", "Electronics", 200,4));
+        productRepository.save(new Product(2L, "Shoes", "Nike", "Clothing", 600, 5));
+        productRepository.save(new Product(3L, "Shirts", "NB", "Clothing", 500, 8));
+        productRepository.save(new Product(4L, "Mac", "Apple", "Electronics", 200, 3));
+        productRepository.save(new Product(5L, "Books", "Niyo", "Stationary", 800,17));
+        productRepository.save(new Product(6L, "pens", "Niyo", "Stationary", 600,14));
     }
 }
